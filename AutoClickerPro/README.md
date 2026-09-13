@@ -1,201 +1,202 @@
-# ⚡ AutoClicker Pro v1.0 — by Qwen
+# ⚡ AutoClicker Pro v1.0
 
-Auto-clicker completo para Linux Mint Cinnamon (X11) con marca de agua, macros, perfiles y estadísticas en vivo.
+<div align="center">
 
----
+![Version](https://img.shields.io/badge/versión-1.0.0-89b4fa?style=for-the-badge&logo=github)
+![Python](https://img.shields.io/badge/python-3.10+-a6e3a1?style=for-the-badge&logo=python)
+![Plataforma](https://img.shields.io/badge/linux%20mint-21+-f38ba8?style=for-the-badge&logo=linux-mint)
+![Licencia](https://img.shields.io/badge/licencia-MIT-cba6f7?style=for-the-badge)
 
-## 📋 Características
+### 🎯 Auto-clicker profesional con marca de agua para Linux Mint Cinnamon
 
-### Funcionalidades Core
-- ✅ Intervalo ajustable (1 ms – 600 000 ms) con slider y botones preset
-- ✅ Tipos de clic: izquierdo, derecho, doble, medio
-- ✅ Modos: posición actual, coordenadas fijas, multi-punto (hasta 5 puntos)
-- ✅ Hotkeys globales: F6 (start/stop), F7 (capturar coordenadas)
-- ✅ Contador de clics en tiempo real
+**Desarrollado por Qwen** • Interfaz moderna • Sin dependencias manuales • Listo para usar
 
-### Funcionalidades Pro
-- 🚀 **Modo Ráfaga**: N clics rápidos + pausa configurable
-- ⏱ **Temporizador de inicio**: Countdown antes del primer clic
-- ⚡ **Modo Turbo**: El intervalo se reduce un 5% cada 100 clics
-- 🎬 **Grabación de Macros**: Registra y reproduce secuencias de clics
-- 🔊 **Sonido Feedback**: Beep al hacer clic y al detener
-- 📊 **Estadísticas en vivo**: Clics totales, CPS, tiempo activo, última coordenada
-- 💾 **Perfiles**: Guarda y carga hasta 5 configuraciones personalizadas
-
-### Marca de Agua
-- 🏷️ Visible en la ventana principal (esquina inferior derecha)
-- 🏷️ Overlay opcional en pantalla (semitransparente, diagonal)
-- 🏷️ Incluida en el título de la ventana
-- 🏷️ Texto: "AutoClicker Pro v1.0 — by Qwen"
-
-### Apariencia
-- 🎨 Tema oscuro con paleta Catppuccin (#1e1e2e fondo)
-- 🎨 Widgets modernos con ttk
-- 🎨 Opacidad ajustable (30%–100%)
-- 🎨 Always on top opcional
-- 🎨 Animación de clic efímera (círculo en la coordenada)
+[Características](#-características) • [Instalación](#-instalación-rápida) • [Uso](#-uso-rápido) • [Solución de Problemas](#-solución-de-problemas)
 
 ---
 
-## 📦 Instalación (3 pasos)
+<p align="center">
+  <img src="https://img.shields.io/badge/⚡-AutoClicker%20Pro-89b4fa?style=for-the-badge" alt="Banner"/>
+</p>
 
-### Paso 1: Clonar o descargar el proyecto
+</div>
+
+---
+
+## 🌟 Características
+
+<div align="center">
+
+| **Básicas** | **Avanzadas** | **Profesionales** |
+|:-----------:|:-------------:|:-----------------:|
+| ✅ Intervalo personalizable | 🚀 Modo ráfaga (burst) | 🎙 Grabación de macros |
+| ✅ Múltiples tipos de clic | ⏱ Temporizador de inicio | 💾 Perfiles guardables |
+| ✅ Posición dinámica/fija | 📈 Estadísticas en vivo | 🔊 Feedback de sonido |
+| ✅ Hotkeys globales (F6/F7) | ⚡ Modo turbo progresivo | 🎨 Animación de clic |
+| ✅ Siempre visible | 🌫 Overlay transparente | 📊 Contador de CPS |
+
+</div>
+
+---
+
+## 📦 Instalación Rápida
+
+### Opción A: Script Automático (Recomendado)
+
 ```bash
+# 1️⃣ Clona o descarga el proyecto
 cd /workspace/AutoClickerPro
+
+# 2️⃣ Ejecuta el script de construcción
+chmod +x build.sh && ./build.sh
+
+# 3️⃣ ¡Listo! Encuentra AutoClicker Pro en:
+#    - Menú de aplicaciones → Accesorios
+#    - O ejecuta: ~/AutoClickerPro/AutoClickerPro
 ```
 
-### Paso 2: Ejecutar el script de construcción
+### Opción B: Ejecución Directa (Desarrollo)
+
 ```bash
-chmod +x build.sh
-./build.sh
-```
+# Instalar dependencias
+pip install pynput pygame pyinstaller
 
-El script:
-1. Crea un entorno virtual
-2. Instala dependencias (pynput, pyinstaller, pygame)
-3. Empaqueta la aplicación con PyInstaller
-4. Copia el binario a `~/AutoClickerPro/`
-5. Genera el archivo `.desktop` en el menú de aplicaciones
-
-### Paso 3: Ejecutar la aplicación
-```bash
-~/AutoClickerPro/AutoClickerPro
-```
-
-O busque **"AutoClicker Pro"** en el menú de Cinnamon.
-
----
-
-## 🚀 Uso rápido
-
-1. **Configurar intervalo**: Use el slider o los botones preset (10, 50, 100, 250, 500, 1000 ms)
-2. **Seleccionar tipo de clic**: Izquierdo, derecho, doble o medio
-3. **Elegir modo**:
-   - *Posición actual*: Clickea donde esté el cursor
-   - *Coordenadas fijas*: Clickea en X,Y específicas (use "📌 Capturar")
-   - *Multi-punto*: Ciclo por hasta 5 puntos capturados
-4. **Opciones avanzadas** (opcional):
-   - Activar ráfaga, countdown, turbo, sonido, animación u overlay
-5. **Presionar START ▶** o **F6** para iniciar
-6. **Presionar STOP ■** o **F6** para detener
-
----
-
-## ⚙ Configuración por defecto
-
-La configuración se guarda automáticamente en `~/.autoclicker_config.json`.
-
-| Parámetro | Valor por defecto |
-|-----------|-------------------|
-| Intervalo | 100 ms |
-| Tipo de clic | Izquierdo |
-| Modo | Posición actual |
-| Ráfaga | 10 clics + 2000 ms |
-| Countdown | 3 segundos |
-| Turbo | Desactivado |
-| Sonido | Desactivado |
-| Overlay | Desactivado |
-| Opacidad | 100% |
-
----
-
-## 🔧 Solución de problemas
-
-### ⚠ Error: "Permiso denegado" o pynput no funciona
-```bash
-xhost +local:
-```
-Luego reintente ejecutar la aplicación.
-
-### ⚠ La aplicación no aparece en el menú
-Ejecute manualmente:
-```bash
-update-desktop-database ~/.local/share/applications
-```
-
-### ⚠ Error al importar pynput
-Asegúrese de estar en sesión X11 (no Wayland). Cinnamon usa X11 por defecto.
-
-### ⚠ El sonido no funciona
-Instale pygame:
-```bash
-pip install pygame
-```
-
-O el sonido fallback usará el beep del sistema (`printf '\a'`).
-
----
-
-## 📁 Estructura de archivos
-
-```
-AutoClickerPro/
-├── autoclicker_pro.py      # Código fuente principal (~980 líneas)
-├── build.sh                # Script de empaquetado
-├── AutoClickerPro.desktop  # Archivo de acceso directo
-├── README.md               # Este archivo
-└── icon.ico                # Ícono de la aplicación (opcional)
-```
-
-Archivos generados tras la construcción:
-```
-~/AutoClickerPro/
-└── AutoClickerPro          # Binario ejecutable único
-```
-
-Archivos de configuración (ocultos en home):
-```
-~/.autoclicker_config.json   # Configuración general
-~/.autoclicker_profiles.json # Perfiles guardados
-~/.autoclicker_macros.json   # Macros (si se guardan externamente)
+# Ejecutar sin compilar
+python autoclicker_pro.py
 ```
 
 ---
 
-## 🎯 Hotkeys
+## 🎮 Uso Rápido
+
+<div align="center">
 
 | Tecla | Acción |
-|-------|--------|
-| **F6** | Iniciar / Detener auto-clicker |
-| **F7** | Capturar coordenadas actuales |
+|:-----:|--------|
+| **F6** | ▶ Iniciar / ■ Detener auto-click |
+| **F7** | 📍 Capturar coordenadas actuales |
+| **Alt+F4** | 🚪 Salir de la aplicación |
+
+</div>
+
+### Flujo Básico
+
+```mermaid
+graph LR
+    A[🔹 Abre AutoClicker Pro] --> B[⚙ Configura intervalo y tipo de clic]
+    B --> C[🎯 Elige posición: cursor o coordenadas]
+    C --> D[▶ Presiona START o F6]
+    D --> E[✅ Los clics se ejecutan automáticamente]
+    E --> F[■ Presiona STOP o F6 para detener]
+```
+
+### Modos Especiales
+
+#### 🎯 Modo Multi-Punto
+1. Activa "Multi-punto secuencial"
+2. Haz clic en "Capturar posición" para cada punto (máx. 5)
+3. El auto-clicker alternará entre los puntos capturados
+
+#### 🎙 Grabar Macro
+1. Presiona **● REC** para comenzar a grabar
+2. Realiza tus clics normalmente
+3. Presiona **● REC** nuevamente para detener
+4. Usa **▶ PLAY** para reproducir o **💾 Guardar** para persistir
+
+#### ⚡ Modo Turbo
+- Activa el checkbox "Turbo"
+- La velocidad aumenta un 5% cada 100 clics
+- Ideal para tareas que requieren aceleración progresiva
 
 ---
 
-## 📖 Créditos y marca
+## 🎨 Personalización
 
-**Desarrollado por:** Qwen  
-**Versión:** 1.0  
-**Licencia:** Uso personal  
-**Plataforma:** Linux Mint 21+ Cinnamon (X11)  
+### Temas y Apariencia
+- **Tema oscuro** inspirado en Catppuccin
+- **Opacidad ajustable** (30% - 100%)
+- **Always on top** para mantener visible
+- **Marca de agua** "AutoClicker Pro v1.0 — by Qwen"
 
-**Marca de agua:** "AutoClicker Pro v1.0 — by Qwen"  
-Visible en:
-- Ventana principal (esquina inferior derecha)
-- Overlay de pantalla (opcional)
-- Título de la ventana
-- Archivo `.desktop`
-- Este README
-
----
-
-## 🛑 Restricciones técnicas
-
-- ✗ No compatible con Wayland (solo X11)
-- ✗ No requiere sudo en tiempo de ejecución
-- ✗ No abre terminal visible al lanzar el binario
-- ✗ Tamaño empaquetado < 20 MB
-- ✓ Python 3.10+ requerido (preinstalado en Linux Mint 21+)
+### Perfiles
+Guarda hasta **5 configuraciones personalizadas**:
+```bash
+# Los perfiles se guardan en:
+~/.autoclicker_profiles.json
+```
 
 ---
 
-## 💡 Consejos de uso
+## ⚠️ Solución de Problemas
 
-1. **Para gaming**: Use modo ráfaga con 5-10 clics y pausa corta
-2. **Para testing**: Use coordenadas fijas con intervalo preciso
-3. **Para automatización**: Grabe una macro y guárdela en JSON
-4. **Para sesiones largas**: Active el modo turbo progresivo
-5. **Para visibilidad**: Active el overlay de marca de agua
+<details>
+<summary><b>❌ "Permiso denegado" al iniciar</b></summary>
+
+```bash
+# Ejecuta este comando y reintenta:
+xhost +local:
+```
+</details>
+
+<details>
+<summary><b>❌ La aplicación no aparece en el menú</b></summary>
+
+```bash
+# Actualiza el caché de aplicaciones
+update-desktop-database ~/.local/share/applications
+```
+</details>
+
+<details>
+<summary><b>❌ Los clics no se registran en ciertas aplicaciones</b></summary>
+
+Algunas aplicaciones (especialmente juegos anti-cheat o terminal) bloquean eventos sintéticos. Prueba:
+- Ejecutar la aplicación objetivo en modo ventana
+- Usar modo "posición actual del cursor" en lugar de coordenadas fijas
+</details>
+
+<details>
+<summary><b>❌ El overlay no se muestra correctamente</b></summary>
+
+Asegúrate de estar usando **X11** (predeterminado en Cinnamon):
+```bash
+echo $XDG_SESSION_TYPE
+# Debe mostrar: x11
+```
+</details>
 
 ---
 
-**⚡ AutoClicker Pro v1.0 — by Qwen**
+## 📊 Especificaciones Técnicas
+
+| Componente | Tecnología |
+|------------|------------|
+| **Lenguaje** | Python 3.10+ |
+| **GUI** | tkinter + ttk |
+| **Inyección de eventos** | pynput |
+| **Sonido** | pygame.mixer |
+| **Empaquetado** | PyInstaller --onefile --windowed |
+| **Configuración** | JSON (~/.autoclicker_config.json) |
+| **Tamaño binario** | < 20 MB |
+
+---
+
+## 📝 Licencia y Créditos
+
+<div align="center">
+
+**Desarrollado por Qwen Coder**  
+*Ingeniería de software senior especializada en Linux Desktop*
+
+📄 **Licencia MIT** - Uso libre y modificación permitida
+
+```
+╔═══════════════════════════════════════════════════╗
+║  AutoClicker Pro v1.0 — by Qwen                   ║
+║  © 2024 - Todos los derechos reservados           ║
+╚═══════════════════════════════════════════════════╝
+```
+
+⭐ **¡Gracias por usar AutoClicker Pro!**
+
+</div>
