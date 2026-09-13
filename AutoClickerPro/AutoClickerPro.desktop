@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=⚡ AutoClicker Pro
+Comment=Auto-clicker con marca de agua — by Qwen
+Exec=/home/$USER/AutoClickerPro/AutoClickerPro
+Icon=utilities-system-monitor
+Terminal=false
+Type=Application
+Categories=Utility;Accessibility;
+Keywords=auto;clicker;automation;mouse;
