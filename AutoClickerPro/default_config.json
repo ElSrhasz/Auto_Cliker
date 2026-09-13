@@ -1,0 +1,19 @@
+{
+  "interval_ms": 100,
+  "click_type": "left",
+  "click_mode": "current",
+  "fixed_coords": [0, 0],
+  "multi_points": [],
+  "burst_count": 10,
+  "burst_pause": 2000,
+  "countdown_seconds": 3,
+  "turbo_enabled": false,
+  "turbo_min_interval": 10,
+  "sound_click": false,
+  "sound_stop": false,
+  "show_animation": false,
+  "overlay_enabled": false,
+  "always_on_top": false,
+  "opacity": 100,
+  "profiles": {}
+}
